@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const api = axios.create({
 //   baseURL: '/api',
-    baseURL: "http://localhost:5000/api",
+//    baseURL: "http://localhost:5000/api",
+    baseURL:"https://blog-6or8.onrender.com/api"
 });
 
 api.interceptors.request.use(config => {

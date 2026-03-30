@@ -1,0 +1,120 @@
+.auth-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 64px);
+}
+
+/* Left panel */
+.auth-left {
+  background: var(--ink);
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 70%, rgba(200,129,58,0.2) 0%, transparent 60%);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cream);
+  position: relative;
+  z-index: 1;
+}
+
+.auth-brand .brand-icon { color: var(--accent); }
+
+.auth-quote {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.auth-quote cite {
+  font-size: 0.88rem;
+  color: var(--accent-light);
+  font-style: normal;
+}
+
+/* Right panel */
+.auth-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  background: var(--cream);
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-header {
+  margin-bottom: 32px;
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.auth-header p {
+  color: var(--ink-light);
+  font-size: 0.95rem;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  justify-content: center;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--ink-light);
+}
+
+.auth-switch a {
+  color: var(--accent);
+  font-weight: 600;
+}
+.auth-switch a:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .auth-page { grid-template-columns: 1fr; }
+  .auth-left {
+    padding: 40px 24px;
+    min-height: 220px;
+  }
+  .auth-quote blockquote { font-size: 1.05rem; }
+  .auth-right { padding: 32px 20px; }
+}

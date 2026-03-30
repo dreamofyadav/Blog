@@ -1,0 +1,31 @@
+.notfound-page {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.notfound-glyph {
+  font-size: 3.5rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.notfound-code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.notfound-msg {
+  font-size: 1.1rem;
+  color: var(--ink-light);
+  margin-bottom: 16px;
+}

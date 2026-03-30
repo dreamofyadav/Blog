@@ -1,0 +1,14 @@
+# Backend node_modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Uploads: ignore all files but keep folder
+uploads/*
+!uploads/.gitkeep

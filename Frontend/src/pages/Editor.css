@@ -1,0 +1,312 @@
+.editor-page {
+  min-height: calc(100vh - 64px);
+  background: var(--cream);
+}
+
+/* Top Bar */
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+
+.editor-topbar-left, .editor-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.editor-meta-info {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  font-style: italic;
+}
+
+.saved-indicator {
+  font-size: 0.82rem;
+  color: var(--success);
+  font-weight: 600;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; } }
+
+/* Layout */
+.editor-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  align-items: start;
+}
+
+/* Main Editor */
+.editor-main {
+  padding-right: 32px;
+}
+
+/* Cover Image */
+.cover-image-section {
+  margin-bottom: 24px;
+}
+
+.cover-upload-btn {
+  width: 100%;
+  padding: 24px;
+  background: var(--cream-dark);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  font-family: 'Source Serif 4', serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.cover-upload-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-muted);
+}
+
+.cover-preview-wrapper {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.cover-preview {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.cover-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.cover-preview-wrapper:hover .cover-preview-overlay { opacity: 1; }
+
+/* Title Input */
+.title-input {
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-bottom: 20px;
+  line-height: 1.25;
+  caret-color: var(--accent);
+}
+
+.title-input::placeholder { color: #c0bab0; }
+
+/* Sidebar */
+.editor-sidebar {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-heading {
+  font-size: 0.9rem;
+  font-family: 'Source Serif 4', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink-light);
+  margin-bottom: 16px;
+}
+
+.status-toggle {
+  display: flex;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.status-opt {
+  flex: 1;
+  padding: 8px;
+  background: transparent;
+  color: var(--ink-light);
+  font-size: 0.85rem;
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+}
+.status-opt.active {
+  background: var(--accent);
+  color: white;
+}
+.status-opt:not(.active):hover { background: var(--cream); }
+
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  margin-top: 4px;
+}
+
+.tags-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+.sidebar-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+}
+.stat-row strong { color: var(--ink); font-weight: 700; }
+
+/* Tips */
+.sidebar-tips {
+  background: var(--accent-muted);
+  border: 1px solid rgba(200,129,58,0.2);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.tip-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.sidebar-tips ul {
+  padding-left: 16px;
+  list-style: disc;
+}
+.sidebar-tips li {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+/* ── Read-only / Published lock styles ── */
+
+/* Whole-page tint when locked */
+.editor-page--readonly .editor-main {
+  opacity: 0.92;
+}
+
+/* Read-only banner below topbar */
+.readonly-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 32px;
+  background: #fff8e1;
+  border-bottom: 1px solid #ffe082;
+  font-size: 0.88rem;
+  color: #5d4037;
+}
+
+.readonly-banner-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.readonly-banner div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.readonly-banner strong { font-weight: 700; color: #4e342e; }
+.readonly-banner span   { color: #795548; }
+
+.readonly-banner-cta { flex-shrink: 0; }
+
+/* Editing-unlocked warning stripe */
+.editing-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 32px;
+  background: #fff3e0;
+  border-bottom: 1px solid #ffcc80;
+  font-size: 0.84rem;
+  color: #e65100;
+}
+
+/* Title locked */
+.title-input--readonly {
+  cursor: default;
+  color: var(--ink);
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Sidebar read-only info */
+.readonly-info { display: flex; flex-direction: column; gap: 12px; }
+
+.readonly-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+}
+
+@media (max-width: 900px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+  }
+  .editor-main { padding-right: 0; }
+  .editor-sidebar { position: static; }
+  .title-input { font-size: 1.8rem; }
+  .editor-topbar { padding: 10px 16px; }
+  .readonly-banner { padding: 12px 16px; flex-wrap: wrap; }
+  .editing-notice { padding: 10px 16px; }
+}

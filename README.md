@@ -118,12 +118,6 @@ BrainByte/
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-- Node.js 18+
-- MongoDB (local) or a [MongoDB Atlas](https://www.mongodb.com/atlas) free cluster
-- A free [Cloudinary](https://cloudinary.com) account
-
 ### 1. Clone the repository
 
 ```bash
@@ -142,7 +136,7 @@ Create a `.env` file inside the `backend/` folder:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/inkwell
+MONGO_URI=mongodb://localhost:27017/Blog
 JWT_SECRET=your_super_secret_jwt_key_here
 
 # From cloudinary.com → Dashboard
